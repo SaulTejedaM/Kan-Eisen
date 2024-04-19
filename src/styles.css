@@ -1,0 +1,364 @@
+body {
+    --black: #3a3a3c;
+    --white: #f0f1f2;
+    --grey: #aeaeb2;
+    --purple: #b462ff;
+    --fuschia: #ff45b4;
+    --blue: #0a84ff;
+    --green: #30d158;
+    --orange: #ff9528;
+    --yellow: #dddd25;
+    --cian: #00c7be;
+    --red: #ff375f;
+    --line: 2.5ch;
+    --font: Arial, Helvetica, sans-serif;
+    user-select: none;
+    background-color: var(--white);
+    font-family: var(--font);
+    height: 520px;
+    width: 700px;
+}
+
+#header{
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+#header h1{
+    padding-left: 30px;
+}
+
+#action-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--grey);
+    color: var(--white);
+    font-size: 20px;
+    transition: 0.30s;
+}
+
+.action-button:hover {
+    background-color: var(--black);
+    color: var(--grey);
+    cursor: pointer;
+}
+
+#taskStatusSection{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+.listSpace {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 5px;
+    margin: 1px;
+    flex-grow: 1;
+    max-width: calc(33.33% - 15px);
+    box-sizing: border-box;
+    height: calc(90vh - 40px);
+}
+
+.task-status-title {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: auto;
+    border-radius: 25px;
+    margin: 2px 5px;
+    max-height: 30px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.task-status-title p{
+    padding-left: 10px;
+}
+
+#not-started-title{
+    background-color: var(--grey);
+    color: #ffffff;
+}
+
+#in-progress-title{
+    background-color: var(--blue);
+    color: #ffffff;
+}
+
+#done-title{
+    background-color: var(--cian);
+    color: #ffffff;
+}
+
+.modal-task-status{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 150px;
+    max-height: 25px;
+
+    border-style: none;
+    border-radius: 25px;
+    margin: 5px 25px;
+
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.modal-title p{
+    padding-left: 10px;
+}
+
+#activity-status{
+    border-radius: 15px;
+    border-color: var(--grey);
+    background-color: var(--grey);
+    color:white;
+}
+
+.modal-background {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(240,241,242);
+    background-color: rgba(240,241,242,0.8);
+}
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 2%;
+
+    border: none;
+    width: 80%;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: left;
+    width: 80%;
+}
+
+.modal-subtitle{
+    font-weight: bolder;
+    color: var(--black);
+    font-size: 16px;
+}
+
+.modal-text{
+    font-weight: lighter;
+}
+
+.close-modal {
+    /* top: 10px;
+    right: 10px; */
+    cursor: pointer;
+    color: var(--grey);
+    font-size: 20px;
+    transition: 0.30s;
+    font-size: 30px;
+}
+
+.close-modal:hover{
+    color: var(--black); 
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.button-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:50%;
+}
+
+.save-button{
+    color: var(--green);
+    border-color: var(--green);
+    background-color: white;
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+
+    font-weight: bolder;
+    font-size: 14px;
+    padding: 10px;
+    width: 35%;
+    transition: 0.30s;
+}
+
+.save-button:hover{
+    color: white;
+    background-color: var(--green);
+    cursor: pointer;
+}
+
+.delete-button{
+    color: var(--red);
+    border-color: var(--red);
+    background-color: white;
+    border-radius: 15px;
+    border-width: 3px;
+    border-style: solid;
+
+    font-weight: bolder;
+    font-size: 14px;
+    padding: 10px;
+    width: 35%;
+    transition: 0.30s;
+}
+
+.delete-button:hover{
+    color: white;
+    background-color: var(--red);
+    cursor: pointer;
+}
+
+.settings-option{
+    border: None;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 60%;
+    margin: 10px;
+}
+
+.settings-option:hover{
+    color: var(--grey);
+}
+
+/* Task section and components */
+
+#task-status{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#task-name{
+    border: none;
+    background-color: white;
+    color: var(--grey);
+    font-size: large;
+    font-weight: bolder;
+
+    font-size: 25px;
+}
+
+input:focus{
+    border: none;
+}
+
+#task-name:hover{
+    cursor: text;
+}
+
+textarea{
+    border:none;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+#task-description{
+    border: none;
+    color: var(--grey);
+    font-size: 14px;
+
+    resize: none;
+}
+
+#task-description:hover{
+    cursor: text;
+}
+
+
+
+/* Style the dropdown button */
+.dropbtn {
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Style the dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Style the dropdown button on hover */
+  .dropbtn:hover {
+    background-color: #ddd;
+  }
+  
+  /* Show the dropdown content when the dropdown button is clicked */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Style the dropdown items */
+  .dropdown-content button {
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* Style the dropdown items on hover */
+  .dropdown-content button:hover {
+    background-color: #ddd;
+  }
+  
